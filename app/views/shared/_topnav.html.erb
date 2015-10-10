@@ -1,0 +1,31 @@
+<nav class="navbar navbar-light fixed-top bg-faded">
+  <a class="navbar-brand" href="/">Casual Pairing</a>
+  <ul class="nav navbar-nav pull-right">
+    <li class="nav-item">
+      <a class="nav-link" href="/browse">Find a Match</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Your Matches</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/profile">Profile</a>
+    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/edit">Settings</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/sign_in">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/sign_up">Sign Up</a>
+      </li>
+    <% end %>
+
+  </ul>
+  </form>
+</nav>

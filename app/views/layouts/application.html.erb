@@ -8,7 +8,26 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container" id="content">
+  <%= render partial: "shared/topnav" %>
+  <% if notice %>
+    <div class="temp alert alert-info alert-dismissable flash fade-in">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="temp alert alert-warning alert-dismissable flash fade-in">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= alert %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

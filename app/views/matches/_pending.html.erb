@@ -1,0 +1,22 @@
+<div class="row">
+  <h2 class="text-center">pair with <span class="text-info"><%= @partner.username %></span> ?</h2>
+  <div class="col-md-2">
+    <%= form_for [@match, @approval] do |f| %>
+      <%= f.hidden_field :given, value: false %>
+      <%= f.submit "hell naw", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card">
+      <%= @partner.code_sample %>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <%= form_for [@match, @approval] do |f| %>
+      <%= f.hidden_field :given, value: true %>
+      <%= f.submit "omg yes", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<h1>Your Profile</h1>
+
+<div class="col-md-8 col-md-offset-2">
+  <%= form_tag update_profile_path, method: :post do %>
+    <div class="form-group">
+      <%= text_area_tag :code_sample, current_user.code_sample, placeholder: "Add your sexy code sample here", class: "form-control" %>
+    </div>
+    <%= submit_tag "Update My Sexy Code Sample", class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>
