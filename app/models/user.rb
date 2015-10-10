@@ -8,15 +8,6 @@ class User < ActiveRecord::Base
   has_many :approvals
   has_many :matches, through: :approvals
 
-
-  def new_partner
-    User.where.not(id: previous_partner_ids).sample
-  end
-
-  def previous_partner_ids
-    matches.map { |m| m.approvals.pluck(:user_id) }.uniq!
-  end
-
   def profile_completed?
     !!code_sample
   end

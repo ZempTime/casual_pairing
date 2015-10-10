@@ -3,6 +3,7 @@ class MatchesController < ApplicationController
   before_action :set_match
   before_action :set_partner
   before_action :set_approval
+  skip_before_action :set_partner, :set_approval if :no_match?
 
   def show
   end
@@ -12,7 +13,7 @@ class MatchesController < ApplicationController
       if params[:id].present?
         @match = Match.find(params[:id])
       else
-        @match = Match.matchmake(current_user)
+        @match = MatchMaker.new(current_user).matchmake
       end
     end
 
@@ -22,5 +23,9 @@ class MatchesController < ApplicationController
 
     def set_approval
       @approval = @match.approval_for(current_user)
+    end
+
+    def no_match?
+      @match.class == "Match"
     end
 end
