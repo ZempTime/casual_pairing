@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :approvals
   has_many :matches, through: :approvals
+  has_many :chats
 
   def profile_completed?
     !!code_sample

@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>person</th>
+        <th>chatted?</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <th scope="row"><%= link_to match.partner_for(current_user).username, match_path(match) %></th>
+        <td>nope</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

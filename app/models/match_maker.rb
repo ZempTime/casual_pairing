@@ -26,5 +26,13 @@ class MatchMaker
     def status
       "nothing"
     end
+
+    def partner_for(arg)
+      nil
+    end
+
+    def approval_for(arg)
+      nil
+    end
   end
 end

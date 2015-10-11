@@ -1,0 +1,22 @@
+<div class="row">
+  <h2 class="text-center"><span class="text-info"><%= @partner.username %></span></h2>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="card">
+      <%= @partner.code_sample %>
+    </div>
+
+    <div id="chat-container">
+      <div>
+        <%= render @match.chats %>
+      </div>
+      <div>
+        <%= form_for [@match, Chat.new] do |f| %>
+          <%= f.text_area :message, placeholder: "Your message here" %>
+          <div>
+            <%= f.submit "chat", class: "btn btn-default" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

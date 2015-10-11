@@ -3,7 +3,13 @@ class MatchesController < ApplicationController
   before_action :set_match
   before_action :set_partner
   before_action :set_approval
-  skip_before_action :set_partner, :set_approval if :no_match?
+
+  def index
+    @matches = current_user.matches.made + current_user.matches.engaged
+    unless @matches.any?
+      redirect_to browse_path, notice: "Look, ya gotta find yoself some friends before you're allowed into that section."
+    end
+  end
 
   def show
   end

@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get "profile", to: "profiles#edit", as: :profile
   post "profile", to: "profiles#update", as: :update_profile
 
-  resources :matches, only: [:show] do
+  resources :matches, only: [:index, :show] do
     resources :approvals, only: [:update]
+    resources :chats, only: [:create]
   end
 
   get "browse", to: "matches#show", as: :browse
