@@ -4,28 +4,45 @@
   <title>CasualPairing</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,700,900' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Roboto:400,300,300italic,700,900:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
 </head>
 <body>
 
-<div class="container" id="content">
-  <%= render partial: "shared/topnav" %>
-  <% if notice %>
-    <div class="temp alert alert-info alert-dismissable flash fade-in">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= notice %>
-    </div>
-  <% end %>
+<div id="content">
+  <div class="container">
+    <%= render partial: "shared/topnav" %>
+    <% if notice %>
+      <div class="temp alert alert-info alert-dismissable flash fade-in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= notice %>
+      </div>
+    <% end %>
 
-  <% if alert %>
-    <div class="temp alert alert-warning alert-dismissable flash fade-in">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= alert %>
-    </div>
-  <% end %>
+    <% if alert %>
+      <div class="temp alert alert-warning alert-dismissable flash fade-in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= alert %>
+      </div>
+    <% end %>
 
-  <div class="row">
-    <%= yield %>
+    <div class="row">
+      <%= yield %>
+    </div>
   </div>
 </div>
 

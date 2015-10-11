@@ -4,14 +4,16 @@
     <thead>
       <tr>
         <th>person</th>
-        <th>chatted?</th>
+        <th>messages</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
     <% @matches.each do |match| %>
       <tr>
         <th scope="row"><%= link_to match.partner_for(current_user).username, match_path(match) %></th>
-        <td>nope</td>
+        <td><%= match.chats.count %></td>
+        <td class="text-muted"><%= time_ago_in_words match.created_at %> ago</td>
       </tr>
     <% end %>
     </tbody>
