@@ -14,6 +14,9 @@ class MatchesController < ApplicationController
   def show
   end
 
+  def show_react
+  end
+
   private
     def set_match
       if params[:id].present?

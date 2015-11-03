@@ -50,3 +50,4 @@ end
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'react-rails', '~> 1.3.0'
 gem 'devise', '~> 3.5.2'
+gem 'active_model_serializers', '~> 0.9.3'

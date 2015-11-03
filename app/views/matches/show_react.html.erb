@@ -25,4 +25,4 @@
   </div>
 </div>
 
-<%= react_component('ChatContainer') %>
+<%= react_component('ChatContainer', {chats_url: match_chats_url(@match), create_chat_url: match_chats_url(@match)} ) %>

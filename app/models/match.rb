@@ -1,4 +1,6 @@
 class Match < ActiveRecord::Base
+  include ActiveModel::Serialization
+
   has_many :approvals
   has_many :users, through: :approvals
   has_many :chats

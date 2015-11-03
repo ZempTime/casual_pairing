@@ -2,6 +2,10 @@ class ChatsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_match
 
+  def index
+    render json: @match.chats
+  end
+
   def create
     @chat = @match.chats.new chat_params
     @chat.user = current_user
