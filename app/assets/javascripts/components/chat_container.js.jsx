@@ -22,7 +22,6 @@ var ChatContainer = React.createClass({
   },
   render: function() {
     return(
-    <div className="row">
       <div className="col-md-6">
         <h2>
           <span className="text-muted">Chat</span>
@@ -30,18 +29,29 @@ var ChatContainer = React.createClass({
           <ChatDisplay chats={this.state.chats} />
           <ChatForm create_chat_url={this.props.create_chat_url}/>
       </div>
-    </div>
     );
   }
 });
 
 var ChatDisplay = React.createClass({
+  componentWillUpdate: function() {
+    var node = this.refs.messages.getDOMNode();
+    this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight;
+  },
+  componentDidUpdate: function() {
+    if (this.shouldScrollBottom) {
+      var node = this.refs.messages.getDOMNode();
+      node.scrollTop = node.scrollHeight
+    }
+  },
   render: function() {
     return (
       <div className="card card-block">
-        { this.props.chats.map(function(chat) {
-           return <Chat chat={chat} key={chat.id}/>;
-        })}
+        <div id="chat-messages" ref="messages">
+          { this.props.chats.map(function(chat) {
+             return <Chat chat={chat} key={chat.id}/>;
+          })}
+        </div>
       </div>
     );
   }
@@ -75,7 +85,6 @@ var ChatForm = React.createClass({
       data: data,
       success: function(data) {
         form.refs.message.getDOMNode().value = '';
-        console.log("successsu");
       },
       error: function(xhr, status, err) {
         console.error(status, err.toString());
