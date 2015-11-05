@@ -1,3 +1,61 @@
-<p>sup</p>
+<div class="col-md-10 col-md-offset-1">
+  <div class="jumbotron" id="get-started">
+    <h1 class="text-center">Casual Pairing</h1>
+    <p class="text-muted text-center">Tinder for pair programming.</p>
+    <div class="text-center">
+      <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-block">
+      <div class"row">
+        <div class="col-md-2">
+          <h1 class="text-center">1.</h1>
+        </div>
+        <div class="col-md-10">
+          <h3>
+            <%= link_to "Create an Account", new_user_registration_path %> (email optional)
+          </h3>
+        </div>
+        <p class="text-muted text-right">p.s. - you'll have to decide on a username. </p>
+      </div>
+    </div>
+  </div>
 
-<%= link_to "sign up", new_user_registration_path %>
+
+  <div class="card text-center">
+    <div class="card-block">
+      <div class"row">
+        <div class="col-md-2">
+          <h1 class="text-center">2.</h1>
+        </div>
+        <div class="col-md-10">
+          <h3>
+            Fill out your profile.
+          </h3>
+          <%= image_tag "profile", size: "600x200" %>
+        </div>
+        <p class="text-muted text-right">Then hopefully they swipe right like this text</p>
+      </div>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-block">
+      <div class"row">
+        <div class="col-md-2">
+          <h1 class="text-center">3.</h1>
+        </div>
+        <div class="col-md-10">
+          <h3>
+            Find people to pair with!
+          </h3>
+          <%= image_tag "chat", size: "650x300" %>
+        </div>
+        <p class="text-muted">Reenactment by professional programmers on a closed course.</p>
+      </div>
+      <div class="text-center">
+        <%= link_to "Top", root_path(anchor: "get-started") %>
+      </div>
+    </div>
+  </div>
+</div>
