@@ -5,7 +5,7 @@ class MatchMaker
     @all_pending_matches = @user.matches.where(status: "pending")
     @already_decided_matches = Match.where(id: @user.approvals.where.not(given: nil).pluck(:match_id))
 
-    @potential_partners = User.all - @previous_partners
+    @potential_partners = User.all - @previous_partners - [user]
     @pending_matches = (@all_pending_matches - @already_decided_matches).uniq
   end
 
