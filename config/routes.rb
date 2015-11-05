@@ -14,5 +14,9 @@ Rails.application.routes.draw do
 
   get "browse", to: "matches#show", as: :browse
 
+  authenticated :user do
+    root to: "matches#show", as: :user_root
+  end
+
   root to: "home#index"
 end
