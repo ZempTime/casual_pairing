@@ -3,7 +3,7 @@
   <div class="col-md-6">
   <h2 class="text-center"><span class="text-info"><%= @partner.username %></span></h2>
     <div class="card card-block">
-      <p class="card-text"><%= @partner.code_sample %></p>
+      <p class="card-text"><%= markdownify(@partner.code_sample) %></p>
     </div>
   </div>
 </div>

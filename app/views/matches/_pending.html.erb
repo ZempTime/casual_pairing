@@ -9,7 +9,7 @@
 
   <div class="col-md-8">
     <div class="card card-block">
-      <p class="card-text"><%= @partner.code_sample %></p>
+      <p class="card-text"><%= markdownify(@partner.code_sample) %></p>
     </div>
   </div>
 
