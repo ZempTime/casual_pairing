@@ -56,4 +56,9 @@ gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
-# Add this if you're using rbenv
+gem 'html-pipeline', '~> 2.2', '>= 2.2.2'
+gem 'github-linguist', '~> 4.7'
+gem 'gemoji', '~> 2.1'
+gem 'github-markdown', '~> 0.6.9'
+gem 'sanitize', '~> 4.0'
+gem 'html-pipeline-rouge_filter'

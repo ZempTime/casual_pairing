@@ -1,10 +1,22 @@
 <h1>Your Profile</h1>
 
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-6">
   <%= form_tag update_profile_path, method: :post do %>
     <div class="form-group">
+    <%= link_to "https://help.github.com/articles/github-flavored-markdown/" do %>
+      <p class="small">Uses Github-flavored markdown</p>
+    <% end %>
       <%= text_area_tag :code_sample, current_user.code_sample, placeholder: "Add your sexy code sample here", class: "form-control", rows: 10 %>
     </div>
     <%= submit_tag "Update My Sexy Code Sample", class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>
+
+<div class="col-md-6">
+  <p class="small">Preview</p>
+  <% if current_user.code_sample.presence %>
+    <div class="card card-block">
+      <%= markdownify(current_user.code_sample) %>
+    </div>
   <% end %>
 </div>
