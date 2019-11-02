@@ -49,7 +49,7 @@ end
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'react-rails', '~> 1.3.0'
-gem 'devise', '~> 3.5.2'
+gem 'devise', '~> 4.7.1'
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
