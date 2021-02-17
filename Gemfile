@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '6.0.3.5'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
@@ -48,7 +48,7 @@ end
 
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
-gem 'react-rails', '~> 1.3.0'
+gem 'react-rails', '~> 1.3.1'
 gem 'devise', '~> 3.5.2'
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'capistrano', '~> 3.1.0'
