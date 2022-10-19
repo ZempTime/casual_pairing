@@ -6,11 +6,11 @@ gem 'rails', '6.0.3.5'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0', '>= 5.0.8'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2.2'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
@@ -49,7 +49,7 @@ end
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'react-rails', '~> 1.3.1'
-gem 'devise', '~> 4.7.0'
+gem 'devise', '~> 3.5.2'
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
@@ -60,5 +60,5 @@ gem 'html-pipeline', '~> 2.2', '>= 2.2.2'
 gem 'github-linguist', '~> 4.7'
 gem 'gemoji', '~> 2.1'
 gem 'github-markdown', '~> 0.6.9'
-gem 'sanitize', '~> 4.0'
+gem 'sanitize', '~> 4.0', '>= 4.0.0'
 gem 'html-pipeline-rouge_filter'
